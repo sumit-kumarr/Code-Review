@@ -1,0 +1,109 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html,body,#root{
+
+  height: 100%;
+  width: 100%;
+  background-color: rgba(4, 111, 218, 0.333);
+
+}
+
+main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  flex-direction: row;
+
+}
+
+main .left , main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+  border:2px solid white;
+
+
+}
+
+main .left{
+  background-color: black;
+  position: relative;
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #ff22ff;
+  padding : 10px 20px;
+  border-radius: 0.5rem;
+  animation: fadeIn 0.5s ease-in-out;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  user-select: none;
+}
+
+main .left .review:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+main .right{
+  background-color: rgb(28, 27, 27);
+  padding: 1rem 2rem;
+  overflow-y: auto;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  main .left, main .right {
+    flex-basis: 100%;
+    height: 100%;
+  }
+
+  main .right {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  main .left .review {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  main .right {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    width : 100%;
+    height:100%;
+  }
+}

@@ -32,7 +32,7 @@ function App() {
     try {
       setLoading(true)
       setError(null)
-      const response = await axios.post('http://localhost:3000/ai/get-review', { code })
+      const response = await axios.post('https://code-review-backendd.onrender.com', { code })
       setReview(response.data.response)
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to get review')
